@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "first_name": "Naruto",
+    "last_name": "Uzumaki",
+    "team": 7
+  },
+  {
+    "id": 2,
+    "first_name": "Sasuke",
+    "last_name": "Uchiha",
+    "team": 7
+  },
+  {
+    "id": 3,
+    "first_name": "Sakura",
+    "last_name": "Haruno",
+    "team": 5
+  },
+  {
+    "id": 4,
+    "first_name": "Kakashi",
+    "last_name": "Hatake",
+    "team": 1
+  }
+]
