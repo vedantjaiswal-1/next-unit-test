@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { useState } from 'react';
+import { Card } from 'react-bootstrap';
 import styles from '../../styles/Home.module.css';
 import User from '../user/User.json';
 
@@ -16,19 +16,17 @@ const UserPage: NextPage = () => {
       <main className={styles.main}>
         <h3>User List</h3>
 
-        <div className={styles.grid}>
-          {User.map((item: any) => {
-            return (
-              <>
-                <a href='#' className={styles.card}>
-                  <p>
-                    Name: {item.first_name} {item.last_name}
-                  </p>
-                  <p>Team: {item.team}</p>
-                </a>
-              </>
-            );
-          })}
+        <div>
+          {User.map((item: any) => (
+            <Card className='mb-2' key={item.id}>
+              <Card.Body>
+                <p>
+                  Name: {item.first_name} {item.last_name}
+                </p>
+                <p>Team: {item.team}</p>
+              </Card.Body>
+            </Card>
+          ))}
         </div>
       </main>
     </div>

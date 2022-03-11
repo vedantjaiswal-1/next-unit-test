@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders UserPage unchanged 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <main
+      class="main"
+    >
+      <h3>
+        User List
+      </h3>
+      <div>
+        <div
+          class="mb-2 card"
+        >
+          <div
+            class="card-body"
+          >
+            <p>
+              Name: 
+              Naruto
+               
+              Uzumaki
+            </p>
+            <p>
+              Team: 
+              7
+            </p>
+          </div>
+        </div>
+        <div
+          class="mb-2 card"
+        >
+          <div
+            class="card-body"
+          >
+            <p>
+              Name: 
+              Sasuke
+               
+              Uchiha
+            </p>
+            <p>
+              Team: 
+              7
+            </p>
+          </div>
+        </div>
+        <div
+          class="mb-2 card"
+        >
+          <div
+            class="card-body"
+          >
+            <p>
+              Name: 
+              Sakura
+               
+              Haruno
+            </p>
+            <p>
+              Team: 
+              5
+            </p>
+          </div>
+        </div>
+        <div
+          class="mb-2 card"
+        >
+          <div
+            class="card-body"
+          >
+            <p>
+              Name: 
+              Kakashi
+               
+              Hatake
+            </p>
+            <p>
+              Team: 
+              1
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;
