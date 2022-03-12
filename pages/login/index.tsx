@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Container, Row, Col, Card, Form } from 'react-bootstrap';
+import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 import Image from 'next/image';
 
 const Login = () => {
@@ -8,7 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const onSubmit = () => {
-    console.log(email, password);
+    alert(`Email: ${email} \nPassword: ${password}`);
   };
   return (
     <React.Fragment>
@@ -18,49 +18,66 @@ const Login = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Container className='mt-5'>
-        <Row>
-          <Col lg={6}>
-            <Card border='primary'>
-              <Card.Body>
-                <Card.Title>Login</Card.Title>
-                <Form>
-                  <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type='email'
-                      placeholder='name@example.com'
-                      data-testid='email'
-                      value={email}
-                      onChange={(event) => {
-                        setEmail(event.currentTarget.value);
-                      }}
-                    />
-                  </Form.Group>
-                  <Form.Group className='mb-3' controlId='exampleForm.ControlInput2'>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      type='password'
-                      placeholder='Password'
-                      value={password}
-                      data-testid='password'
-                      onChange={(event) => {
-                        setPassword(event.currentTarget.value);
-                      }}
-                    />
-                  </Form.Group>
+      <Container>
+        <div className='row justify-content-center mt-5'>
+          <Col xl={10} lg={12} md={9}>
+            <Card className='o-hidden border-0 shadow-lg my-5'>
+              <Card.Body className='p-0'>
+                <Row>
+                  <Col lg={6} className={'d-none d-lg-block bg-login-image'}></Col>
+                  <Col lg={6}>
+                    <div className='p-5'>
+                      <div className='text-center'>
+                        <h1 className='h4 text-gray-900'>Welcome to</h1>
+                        <p className='mb-4 text-primary'>Employee Management</p>
+                        
+                      </div>
+                      <Form className='user'>
+                        <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
+                          <Form.Label>Email</Form.Label>
+                          <Form.Control
+                            type='email'
+                            placeholder='name@gmail.com'
+                            value={email}
+                            data-testid='email'
+                            className='form-control-user'
+                            onChange={(event) => {
+                              setEmail(event.currentTarget.value);
+                            }}
+                          />
+                        </Form.Group>
 
-                  <button onClick={onSubmit} type='button' className='btn btn-primary'>
-                   Login
-                  </button>
-                </Form>
+                        <Form.Group className='mb-4' controlId='exampleForm.ControlInput2'>
+                          <Form.Label>Password</Form.Label>
+                          <Form.Control
+                            type='password'
+                            placeholder='Password'
+                            value={password}
+                            data-testid='password'
+                            className='form-control-user'
+                            onChange={(event) => {
+                              setPassword(event.currentTarget.value);
+                            }}
+                          />
+                        </Form.Group>
+
+                        <Button
+                          onClick={onSubmit}
+                          type='button'
+                          className='btn btn-primary bg-gradient-primary btn-user btn-block'
+                        >
+                          Login
+                        </Button>
+                      </Form>
+                     
+                      
+                    </div>
+                  </Col>
+                </Row>
               </Card.Body>
             </Card>
           </Col>
-          <Col lg={6}>
-            <Image src='/undraw_Programming_re_kg9v.png' width={1027} height={732}></Image>
-          </Col>
-        </Row>
+        </div>
       </Container>
     </React.Fragment>
   );
