@@ -8,6 +8,14 @@ connectDb();
 const handler = nextConnect();
 
 handler
+  .get(async (req: NextApiRequest, res: NextApiResponse, next: NextHandler) => {
+    try {
+      const employees = await Employee.findById(req.query.id);
+      res.status(200).json(employees);
+    } catch (error) {
+      res.status(500).json({ msg: 'Server Error' });
+    }
+  })
   .put(async (req: NextApiRequest, res: NextApiResponse, next: NextHandler) => {
     try {
       const employee = await Employee.findOne({ _id: req.query.id });

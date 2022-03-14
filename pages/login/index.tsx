@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { NextPage } from 'next';
+import Router from 'next/router';
 
 const Login: NextPage = () => {
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ const Login: NextPage = () => {
   const onSubmit = () => {
     localStorage.setItem("user", JSON.stringify(email));
     alert(`Email: ${email} \nPassword: ${password}`);
+    Router.push("/employee/add")
   };
   return (
     <React.Fragment>

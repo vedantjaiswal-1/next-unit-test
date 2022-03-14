@@ -17,18 +17,15 @@ export const Sidebar = () => {
         <hr className='sidebar-divider my-0' />
 
         <li className='nav-item active'>
-          <a className='nav-link' href='/dashboard/'>
+          <a className='nav-link' href='/employee/add/'>
             <i className='fas fa-fw fa-user'></i>
-            <span>Employee</span>
+            <span>Add Employee</span>
+          </a>
+          <a className='nav-link' href='/employee/manage/'>
+            <i className='fas fa-fw fa-book'></i>
+            <span>Manage Employee</span>
           </a>
         </li>
-
-        {/* <li className='nav-item'>
-          <a className='nav-link' href='/dashboard/book'>
-            <i className='fas fa-fw fa-book'></i>
-            <span>Book</span>
-          </a>
-        </li> */}
       </ul>
     </React.Fragment>
   );

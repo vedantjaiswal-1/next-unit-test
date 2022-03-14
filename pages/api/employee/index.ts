@@ -22,17 +22,10 @@ handler
       const employee = new Employee(req.body);
       await employee.save();
       res.status(201).json(employee);
-    } catch (error) {
-        console.log(error)
-      res.status(500).json({ msg: 'Server Error' });
-    }
-  })
 
-  .delete(async (req: NextApiRequest, res: NextApiResponse, next: NextHandler) => {
-    try {
-      await Employee.findOneAndDelete({_id: req.query.id})
+      
     } catch (error) {
-        console.log(error)
+      console.log(error);
       res.status(500).json({ msg: 'Server Error' });
     }
   });
