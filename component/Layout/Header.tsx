@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-
+const User = JSON.parse(localStorage.getItem('user') || '{}');
 export const Header = () => {
   const logout = () => {
     localStorage.clear();
@@ -16,7 +16,7 @@ export const Header = () => {
 
         <ul className='navbar-nav ml-auto'>
           <li className='nav-item dropdown no-arrow'>
-            <span className='mr-3 d-none d-lg-inline text-gray-800'></span>
+            <span className='mr-3 d-none d-lg-inline text-gray-800'>{User.email}</span>
             <Button variant='outline-dark' onClick={() => logout()}>
               <i className='fas fa-sign-out-alt fa-fw text-gray-800'></i>
               Logout

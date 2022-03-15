@@ -22,20 +22,20 @@ describe('Login', () => {
     expect(emailElement.getAttribute('value')).toStrictEqual(testEmail);
   });
 
-  it('checks email label visibility', () => {
+  test('checks email label visibility', () => {
     const emailElement = screen.getByLabelText('Email');
 
     expect(emailElement).toBeVisible;
   });
 
-  it('checks empty password', () => {
+  test('checks empty password', () => {
     const passwordElement = screen.getByTestId('password');
     const currentPasswordValue = passwordElement.getAttribute('value');
 
     expect(currentPasswordValue).toEqual('');
   });
 
-  it('checks password update', () => {
+  test('checks password update', () => {
     const testPassword = 'test@1234';
 
     const passwordElement = screen.getByTestId('password');
@@ -44,7 +44,7 @@ describe('Login', () => {
     expect(passwordElement.getAttribute('value')).toStrictEqual(testPassword);
   });
 
-  it('checks password label visibility', () => {
+  test('checks password label visibility', () => {
     const passwordElement = screen.getByLabelText('Password');
 
     expect(passwordElement).toBeVisible;

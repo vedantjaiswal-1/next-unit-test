@@ -50,6 +50,7 @@ export const AddEmployee = (props: any) => {
                           name='first_name'
                           placeholder='First Name'
                           className='form-control form-control-sm'
+                          data-testid="first-name"
                           value={values.first_name ? values.first_name : ''}
                           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                             handleChange(event);
@@ -69,6 +70,7 @@ export const AddEmployee = (props: any) => {
                           name='last_name'
                           placeholder='Last Name'
                           className='form-control form-control-sm'
+                          data-testid='last-name'
                           value={values.last_name ? values.last_name : ''}
                           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                             handleChange(event);
