@@ -40,7 +40,7 @@ export const ManageEmployee = () => {
               <h6 className='m-0 font-weight-bold text-primary'>Manage Employee</h6>
             </div>
             <div className='card-body'>
-              <div className='table-responsive'>
+              <div className='table-responsive' data-testid="table">
                 <Table className='table table-bordered' id='dataTable'>
                   <thead className='card-header'>
                     <tr className='text-gray-800'>

@@ -27,7 +27,7 @@ export const AddEmployee = (props: any) => {
           EmployeeService.save(props._id, values)
             .then((res: any) => {
               ToastUtil.success('Employee Added.');
-              Router.push("/employee/manage")
+              Router.push('/employee/manage');
             })
             .catch((err: any) => {
               ToastUtil.error('Unable to create!');
@@ -45,12 +45,15 @@ export const AddEmployee = (props: any) => {
                   <Form>
                     <Row className='mb-3'>
                       <Col sm={10}>
-                        <FormLabel className='small'>First Name</FormLabel>
+                        <FormLabel className='small' htmlFor='first-name'>
+                          First Name
+                        </FormLabel>
                         <Field
                           name='first_name'
                           placeholder='First Name'
                           className='form-control form-control-sm'
-                          data-testid="first-name"
+                          id='first-name'
+                          data-testid='first-name'
                           value={values.first_name ? values.first_name : ''}
                           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                             handleChange(event);
@@ -65,11 +68,14 @@ export const AddEmployee = (props: any) => {
                     </Row>
                     <Row>
                       <Col sm={10}>
-                        <FormLabel className='small'>Last Name</FormLabel>
+                        <FormLabel className='small' htmlFor='last-name'>
+                          Last Name
+                        </FormLabel>
                         <Field
                           name='last_name'
                           placeholder='Last Name'
                           className='form-control form-control-sm'
+                          id='last-name'
                           data-testid='last-name'
                           value={values.last_name ? values.last_name : ''}
                           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,7 +92,7 @@ export const AddEmployee = (props: any) => {
                     <Row>
                       <br />
                       <Col sm={10} className='pt-1 mt-4'>
-                        <Button type='submit' className='btn btn-primary btn-user btn-block btn-sm float-right'>
+                        <Button type='submit' data-testid="add-btn" className='btn btn-primary btn-user btn-block btn-sm float-right'>
                           Add
                         </Button>
                       </Col>
