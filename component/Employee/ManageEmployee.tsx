@@ -4,7 +4,7 @@ import { Table, Container, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import EmployeeService from '../../services/EmployeeService';
 import { ToastUtil } from '../../utils/toast';
 
-export const ManageEmployee = () => {
+export const ManageEmployee = (props: any) => {
   const [employee, setEmployee] = useState([]);
 
   const loadEmployee = async () => {
@@ -40,8 +40,8 @@ export const ManageEmployee = () => {
               <h6 className='m-0 font-weight-bold text-primary'>Manage Employee</h6>
             </div>
             <div className='card-body'>
-              <div className='table-responsive' data-testid="table">
-                <Table className='table table-bordered' id='dataTable'>
+              <div className='table-responsive'>
+                <Table className='table table-bordered'>
                   <thead className='card-header'>
                     <tr className='text-gray-800'>
                       <th>Sr. No</th>
@@ -66,8 +66,10 @@ export const ManageEmployee = () => {
                                 </Tooltip>
                               }
                             >
-                              <Link href={`/employee/add/${item._id}`}>
-                                <i className='fa fa-edit pointer ml-3 text-success' />
+                              <Link href={`/employee/add/${item._id}`} data-testid='edit-link'>
+                                <a href={`/employee/add/${item._id}`}>
+                                  <i className='fa fa-edit pointer ml-3 text-success' />
+                                </a>
                               </Link>
                             </OverlayTrigger>
 
@@ -81,6 +83,7 @@ export const ManageEmployee = () => {
                             >
                               <i
                                 className='fa fa-trash pointer ml-3 text-danger'
+                                data-testid='delete-btn'
                                 onClick={() => deleteEmployee(item._id)}
                               />
                             </OverlayTrigger>
