@@ -6,6 +6,7 @@ import Router from 'next/router';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { ToastUtil } from '../../utils/toast';
+import LoginService from '../../services/LoginService';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid Email').required('Email is required'),
@@ -30,8 +31,15 @@ const Login: NextPage = () => {
         validationSchema={LoginSchema}
         validateOnChange={true}
         onSubmit={(values) => {
-          localStorage.setItem('user', JSON.stringify(values));
-          Router.push('/employee/add');
+          LoginService.create(values)
+            .then((response: any) => {
+              ToastUtil.success('Login Success');
+              localStorage.setItem('user', JSON.stringify(response));
+              Router.push('/employee/add');
+            })
+            .catch((error: any) => {
+              ToastUtil.error('Invalid Email or password');
+            });
         }}
       >
         {({ errors, touched }) => (

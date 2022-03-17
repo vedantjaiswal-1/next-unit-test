@@ -1,5 +1,5 @@
 import axios from 'axios';
-const apiBaseUrl = 'http://localhost:3000/api';
+export const apiBaseUrl = 'http://localhost:3000/api';
 
 export const isValidId = (_id: string): boolean => {
   if (!_id) {
@@ -14,10 +14,6 @@ export default class EmployeeService {
   static list = () => {
     return axios.get(`${apiBaseUrl}/employee/`).then((response) => response.data);
   };
-
-  //   static save = (employee: any) => {
-  //     return axios.post(`${apiBaseUrl}/employee`, employee).then((response) => response.data);
-  //   };
 
   static fetch = (id: any) => {
     return axios.get(`${apiBaseUrl}/employee/${id}`, id).then((response) => response.data);

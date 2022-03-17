@@ -3,10 +3,13 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import User from '../../../models/User';
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const connectDb = require('../../../utils/connectDb');
 
-const handler = nextConnect();
+connectDb();
 
-handler.post(async (req: NextApiRequest, res: NextApiResponse, next: NextHandler) => {
+const login = nextConnect();
+
+login.post(async (req: NextApiRequest, res: NextApiResponse, next: NextHandler) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) return res.status(400).send({ status: 400, message: 'Invalid email id.' });
@@ -26,4 +29,4 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse, next: NextHandler
   }
 });
 
-export default handler;
+export default login;
