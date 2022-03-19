@@ -10,7 +10,7 @@ import LoginService from '../../services/LoginService';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid Email').required('Email is required'),
-  password: Yup.string().required('Password is required')
+  password: Yup.string().min(6).required('Password is required')
 });
 
 const Login: NextPage = () => {
@@ -68,8 +68,8 @@ const Login: NextPage = () => {
                                 data-testid='email'
                               />
                               {errors.email && touched.email ? (
-                                <FormText className='text-danger small'>
-                                  <div data-testid='error-msg'>{errors.email}</div>
+                                <FormText className='text-danger small' id="email-error">
+                                  <div className='error-msg'>{errors.email}</div>
                                 </FormText>
                               ) : null}
                             </div>
@@ -85,7 +85,7 @@ const Login: NextPage = () => {
                                 data-testid='password'
                               />
                               {errors.password && touched.password ? (
-                                <FormText className='text-danger small'>
+                                <FormText className='text-danger small' id="password-error">
                                   <div>{errors.password}</div>
                                 </FormText>
                               ) : null}
@@ -93,6 +93,7 @@ const Login: NextPage = () => {
 
                             <Button
                               // onClick={onSubmit}
+                              id="loginbutton"
                               type='submit'
                               className='btn btn-primary bg-gradient-primary btn-user btn-block'
                             >

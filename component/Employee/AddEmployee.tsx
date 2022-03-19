@@ -60,7 +60,7 @@ export const AddEmployee = (props: any) => {
                           }}
                         />
                         {errors.first_name && touched.first_name ? (
-                          <FormText className='text-danger small'>
+                          <FormText className='text-danger small' id="first-name-error">
                             <div>{errors.first_name}</div>
                           </FormText>
                         ) : null}
@@ -83,7 +83,7 @@ export const AddEmployee = (props: any) => {
                           }}
                         />
                         {errors.last_name && touched.last_name ? (
-                          <FormText className='text-danger small'>
+                          <FormText className='text-danger small' id="last-name-error">
                             <div>{errors.last_name}</div>
                           </FormText>
                         ) : null}
@@ -92,7 +92,12 @@ export const AddEmployee = (props: any) => {
                     <Row>
                       <br />
                       <Col sm={10} className='pt-1 mt-4'>
-                        <Button type='submit' data-testid="add-btn" className='btn btn-primary btn-user btn-block btn-sm float-right'>
+                        <Button
+                          id='add-button'
+                          type='submit'
+                          data-testid='add-btn'
+                          className='btn btn-primary btn-user btn-block btn-sm float-right'
+                        >
                           Add
                         </Button>
                       </Col>
