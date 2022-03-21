@@ -16,7 +16,7 @@ export const Header = () => {
         <ul className='navbar-nav ml-auto'>
           <li className='nav-item dropdown no-arrow'>
             <span className='mr-3 d-none d-lg-inline text-gray-800'></span>
-            <Button variant='outline-dark' onClick={() => logout()}>
+            <Button variant='outline-dark' onClick={() => logout()} id="logout">
               <i className='fas fa-sign-out-alt fa-fw text-gray-800'></i>
               Logout
             </Button>

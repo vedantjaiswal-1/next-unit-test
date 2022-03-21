@@ -5,8 +5,8 @@ export const Sidebar = () => {
   return (
     <React.Fragment>
       <ul className='navbar-nav bg-gradient-primary sidebar sidebar-dark accordion' id='accordionSidebar'>
-        <Link href='/dashboard/'>
-          <div className='sidebar-brand d-flex align-items-center justify-content-center'>
+        <Link href='/'>
+          <div className='sidebar-brand d-flex align-items-center justify-content-center' id='icon'>
             <div className='sidebar-brand-icon text-info'>
               <i className='fas fa-users'></i>
             </div>
@@ -17,11 +17,11 @@ export const Sidebar = () => {
         <hr className='sidebar-divider my-0' />
 
         <li className='nav-item active'>
-          <a className='nav-link' href='/employee/add/'>
+          <a className='nav-link' href='/employee/add/' id='add-employee'>
             <i className='fas fa-fw fa-user'></i>
             <span>Add Employee</span>
           </a>
-          <a className='nav-link' href='/employee/manage/'>
+          <a className='nav-link' href='/employee/manage/' id='manage-employee'>
             <i className='fas fa-fw fa-book'></i>
             <span>Manage Employee</span>
           </a>

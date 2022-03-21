@@ -67,7 +67,7 @@ export const ManageEmployee = (props: any) => {
                               }
                             >
                               <Link href={`/employee/add/${item._id}`} data-testid='edit-link'>
-                                <a href={`/employee/add/${item._id}`}>
+                                <a href={`/employee/add/${item._id}`} id='edit-link'>
                                   <i className='fa fa-edit pointer ml-3 text-success' />
                                 </a>
                               </Link>
