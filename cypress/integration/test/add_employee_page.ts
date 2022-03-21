@@ -41,11 +41,12 @@ describe('Add employee page test', () => {
 
   describe('Api Test', () => {
     it('Successful add employee with api', () => {
-      cy.request('POST', 'http://localhost:3000/api/employee/', {
+      cy.request('POST', 'http://localhost:3000/api/employee', {
         first_name: 'Remo',
         last_name: 'Dsauza'
       }).then((response: any) => {
-        console.log('res', response.body);
+        window.localStorage.setItem('employee', JSON.stringify(response.body));
+        cy.reload()
       });
     });
   });
