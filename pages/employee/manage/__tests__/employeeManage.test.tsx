@@ -8,7 +8,15 @@ describe('Employee Manage Test', () => {
     const { queryByTestId } = render(<ManageEmployee />);
 
     const editIcon = await queryByTestId('edit-link');
-    expect(editIcon).toHaveBeenCalled
+    expect(editIcon).toHaveBeenCalled;
+  });
 
+  test('delete button click', async () => {
+    const onDelete = jest.fn();
+    const { queryByTestId } = render(<ManageEmployee onClick={onDelete} />);
+
+    const deleteButton = queryByTestId('delete-btn');
+    deleteButton?.click;
+    expect(onDelete).toHaveBeenCalled;
   });
 });

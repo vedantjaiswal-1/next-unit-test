@@ -13,7 +13,7 @@ export const ManageEmployee = (props: any) => {
         setEmployee(response);
       })
       .catch((error: any) => {
-        console.log(error);
+        ToastUtil.error(error);
       });
   };
 
